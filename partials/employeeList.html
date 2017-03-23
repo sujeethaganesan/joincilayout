@@ -1,0 +1,162 @@
+<section ng-controller="employeeTableController">
+    <!-- section for controller -->
+    <section class="addUpdateEmployeeDetails">
+        <!-- addUpdateEmployeeDetails starts -->
+        <section class="addUpdate">
+            <!-- addUpdate starts -->
+            <p>Add / Update an Employee</p>
+        </section>
+        <!-- addUpdate ends -->
+        <section class="profile">
+            <!-- profile starts -->
+
+            <div class="letfProfileSection">
+                <!-- letfProfileSection starts -->
+                <p class="profileName">Profile:</p>
+                <form name="formDetails" novalidate>
+                    <div class="employeeList">
+                        <label>Employee ID:</label>
+                        <!-- validation for Employee ID-->
+                        <input ng-pattern="/^[0-9]{6}$/" ng-model="empId" type="text" ng-blur="iderror()" ng-required="true" name="idField">
+                        <p class="error" ng-if="EmpIdError">Employee ID Already Exists</p>
+                        <span class="error" ng-show="formDetails.idField.$error.pattern">Not a valid number!</span>
+
+                    </div>
+                    <div class="employeeList">
+                        <label>Employee Name:</label>
+                        <!-- validation for Employee Name-->
+                        <input ng-pattern="/^[a-zA-Z_ ]*$/" ng-model="empName" type="text" ng-required="true" name="nameField">
+                        <span class="error" ng-show="formDetails.nameField.$error.pattern">Not a valid Name Format!</span>
+                    </div>
+                    <div class="employeeList">
+                        <label>Title:</label>
+                        <select ng-model="empTitle" ng-required="true">
+<option></option>
+<option>PM</option>
+<option>PAT</option>
+<option>PA</option>
+</select>
+                    </div>
+                    <div class="employeeList">
+                        <label>Position:</label>
+                        <input type="radio" name="site" value="On site" ng-model="empPosition" ng-required="true"> On site
+                        <input type="radio" name="site" value="Off shore" ng-model="empPosition" ng-required="true"> Off shore
+                    </div>
+                    <div class="employeeList">
+                        <label>competency:</label>
+                        <select ng-model="empCompetency" ng-required="true">
+<option></option>
+<option>CI WEB</option>
+<option>CI RIA</option>
+<option>CI</option>
+</select>
+                    </div>
+                    <p id="emergencycontact">Emergency Contact:</p>
+                    <div id="singlecontacts" class="contacts">
+                        <label>Contact No:</label>
+                        <!-- validation for contactNumber-->
+
+                        <input type="text" ng-model="empMobile" ng-required="true" ng-pattern="/^[0-9]{10}$/"   name="contactField" />
+                        <span class="error" ng-show="formDetails.contactField.$error.pattern">Not a valid Mobile Number!</span>
+                    </div>
+                    <div class="contacts">
+                        <label>Blood Group:</label>
+                        <!-- validation for Blood Group-->
+
+                        <input type="text" ng-model="empBgroup" ng-required="true" ng-pattern="/^(A|B|AB|O)[+|-]$/" / name="bloodGroupField">
+                        <span class="error" ng-show="formDetails.bloodGroupField.$error.pattern">Not a valid blood group!</span>
+                    </div>
+                    <div id="address" class="contacts">
+                        <label class="addressIn">Address:</label>
+                        <textarea type="text" ng-model="empAddress" ng-required="true"></textarea>
+
+                    </div>
+                    <div class="saveButton" ng-show='save'>
+                        <button type="button" ng-click="addPerson()" ng-disabled=" formDetails.$invalid ">Save</button>
+                    </div>
+                    <div class="updateButton" ng-show='up'>
+                        <button type="button" ng-click="updatePerson();upPerson($index)">update</button>
+                    </div>
+                </form>
+
+            </div>
+            <!-- letfProfileSection ends -->
+            <div class="rightProfileSection">
+                <!-- rightProfileSection starts  -->
+                <div class="idNameText">
+                    <p class="nameEdit">{{empName}}</p>
+                    <p class="idEdit">{{empId}}</p>
+                </div>
+                <div class="idText">
+                    <p id="idEdit">{{empId}}</p>
+                </div>
+                <div class="addressText">
+                    <p class="textEdit">Emergency Contact <span class="mobileEdit"># {{empMobile}}</span></p>
+                    <p class="textEdit">Blood Group <span class="bgroupEdit">{{empBgroup}}</span></p>
+                    <p class="textEdit">Address</p>
+                    <textarea rows="3" cols="5" class="textEdit">{{empAddress}}</textarea>
+
+                </div>
+
+            </div>
+            <!-- rightProfileSection ends  -->
+            <div class="clearFix"> </div>
+        </section>
+        <!-- profile ends -->
+        <section class="tableContent">
+            <!-- tableContent starts -->
+            <p class="tableHead">Employee List</p>
+            <table class="tableBody">
+                <thead>
+                    <tr>
+                        <th>
+                            Employee Id
+                        </th>
+                        <th>
+                            Employee Name
+                        </th>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Competency
+                        </th>
+                        <th>
+                            Position
+                        </th>
+                        <th>
+                            Edit
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="list in details track by $index">
+                        <td>
+                            {{list.EmployeeID}}
+                            <!-- name here refers to the name in the json -->
+                        </td>
+                        <td>
+                            {{list.EmployeeName}}
+                        </td>
+                        <td>
+                            {{list.Title}}
+                        </td>
+                        <td>
+                            {{list.Competency}}
+                        </td>
+                        <td>
+                            {{list.Position}}
+                        </td>
+
+                        <td>
+                            <img class="editIn" ng-model="read" ng-src="assets/images/edit.png" ng-click="editDetails(list);getPerson($index)" />
+                        </td>
+                        <!-- for edit button functionality -->
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- tableContent ends -->
+    </section>
+    <!-- addUpdateEmployeeDetails ends -->
+</section>

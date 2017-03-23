@@ -1,0 +1,142 @@
+{
+    "credentialsData": [{
+        "UserRole": "HR-Manager",
+        "UserName": "Ramya",
+        "Password": "Pass123",
+        "Fullname": "Ramya Menon"
+    }, {
+        "UserRole": "HR-Staff",
+        "UserName": "Raja",
+        "Password": "Pass123",
+        "Fullname": "Raja Mohan"
+    }, {
+        "UserRole": "Manager",
+        "UserName": "Ravi",
+        "Password": "Pass123",
+        "Fullname": "Ravi Shankar"
+    }],
+    "screens": {
+        "HR-Manager": [
+            "EmployeesList",
+            "ResourceRequest",
+            "Faq"
+        ],
+        "HR-Staff": [
+            "EmployeesList",
+            "Faq"
+        ],
+        "Manager": [
+            "ResourceRequest",
+            "Faq"
+        ]
+    },
+    "menu": {        
+            "EmployeesList": {
+                "name": "Employees List",
+                "href": "employeesList"
+            },
+            "ResourceRequest": {
+                "name": "Resource Request",
+                "href": "resourceRequest"
+            },
+            "Faq": {
+                "name": "FAQ",
+                "href": "faq"
+            }
+        },
+
+    "employeeList_1": [{
+        "EmployeeID": "201201",
+        "EmployeeName": "PandiyanVadivel",
+        "Title": "PM",
+        "Competency": "CI WEB",
+        "Position": "Off shore",
+        "ContactNo": "8975454748",
+        "BloodGroup": "O+",
+        "Address": "Plot No. 12, 6th River View, Avenue Road, Karapakkam"
+
+    }, {
+        "EmployeeID": "201202",
+        "EmployeeName": "Kumar D",
+        "Title": "PAT",
+        "Competency": "CI WEB",
+        "Position": "Off shore",
+        "ContactNo": "9875454748",
+        "BloodGroup": "B+",
+        "Address": "Plot No. 12, 6th River View, Avenue Road, Karapakkam"
+
+
+
+
+    }, {
+        "EmployeeID": "201203",
+        "EmployeeName": "Karthika M",
+        "Title": "PA",
+        "Competency": "CI RIA",
+        "Position": "Off shore",
+        "ContactNo": "8975499948",
+        "BloodGroup": "AB+",
+        "Address": "Plot No. 12, 6th River View, Avenue Road, Karapakkam"
+    }, {
+        "EmployeeID": "201204",
+        "EmployeeName": "DeviPriya S",
+        "Title": "PAT",
+        "Competency": "CI WEB",
+        "Position": "Off shore",
+        "ContactNo": "9755454748",
+        "BloodGroup": "A+",
+        "Address": "Plot No. 12, 6th River View, Avenue Road, Karapakkam"
+    }],
+    "ResourceList": [{
+        "RequestID": "WEB001",
+        "Designation": "Programmer Analyst",
+        "Numbers":"5",
+        "Position": "Offshore",
+        "No": "2",
+        "Competency": "CI Web",
+        "Location": "Chennai",
+        "Skills":"CSS"
+
+    }, {
+        "RequestID": "WEB002",
+        "Designation": "Associate",
+        "Numbers":"7",
+        "Position": "Offshore",
+        "No": "3",
+        "Competency": "CI Web",
+        "Location": "Bangalore",
+        "Skills":"Flex"
+
+
+    }],
+    "faq":[
+    {
+       "image":"assets/images/upArrow.png",
+       "question":"Q1.What is LorenIpsum?",
+       "number":0,
+       "answer":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+    },
+    {
+       "image":"assets/images/upArrow.png",
+       "question":"Q2.What is LorenIpsum?",
+       "number":1,
+       "answer":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+    },
+    {
+       "image":"assets/images/upArrow.png",
+       "question":"Q3.What is LorenIpsum?",
+       "number":2,
+       "answer":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+    },
+    {
+       "image":"assets/images/upArrow.png",
+       "question":"Q4.What is LorenIpsum?",
+       "number":3,
+       "answer":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+    }
+    ]
+}

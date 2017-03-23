@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Join CI </title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="assets/library/angular.min.js"></script>
+    <script type="text/javascript" src="assets/library/angular-route.min.js"></script>
+</head>
+
+<body>
+    <section ng-app="myApp" class="wrapper"  ng-controller="loginController">
+        <!-- header section begins -->
+        <header>
+            <section class="starter">
+            </section>
+            <section class="logo" >
+                <!-- Welcome section begins with navigation -->
+                <section class="welcome" ng-show="menu" ng-cloak>
+                    <p id="profileName">Welcome <span id="staffName">{{staffName}}</span><span class="rolename">{{roleNameDisplay}}</span><a href="#logout" class="logout">Logout</a></p>
+                    <nav class="menuBar">
+                        <a ng-repeat="x in tabs" ng-href="#{{servicerName.menu[x].href}}" ng-click="highlightTab(x)" ng-class="{ 'active': activeTab == x }">
+			{{servicerName.menu[x].name}}
+			</a>
+                    </nav>
+                    <div class="clearFix"></div>
+                </section>
+
+                <!-- Welcome section ends -->
+                <!-- Sublogo section begins -->
+                <section class="subLogo">
+                    <a href="javascript:void(0)" ng-cloak><img src="assets/images/logo.png" alt="Join CI"></a>
+                    <h1><a href="javascript:void(0)">Join<span> CI</span></a></h1>
+                </section>
+                <!-- sublogo section ends -->
+                <div class="clearFix"></div>
+            </section>
+        </header>
+        <!-- header section ends -->
+
+        <section class="login" ng-show="loginPage">
+            <section class="formBorder">
+                <!-- formborder starts -->
+                <form>
+                    <h3>Login</h3>
+                    <section class="formDetail">
+                        <!-- formDetails starts -->
+                        <div class="credential">
+                        <!-- Login credentials -->
+                            <label>User Name</label>:
+                            <input ng-model="userName" type="text" ng-blur="loginError()"></input>
+                            <p class="error" ng-if="userNameError" ng-cloak>{{userError}}</p>
+                        </div>
+                        <div class="credential">
+                            <label>Password</label>:
+                            <input ng-model="loginPassword" type="password" ng-blur="loginError()" ng-keypress=" EnterKeyPress($event)" >
+                            </>
+                            </input>
+                            <p class="error" ng-if="passwordError" ng-cloak>{{pwdError}}</p>
+                        </div>
+                        <div class="loginButton">
+                            <button ng-click="validate()">Login</button>
+                        </div>
+                    </section>
+                    <!-- formDetails ends -->
+
+                </form>
+            </section>
+            <!-- formborderends -->
+        </section>
+        <section class="formContent" ng-view>
+        </section>
+        <!-- footer starts -->
+        <footer ng-cloak>
+            <p>Powered by CI Team</p>
+        </footer>
+        <!-- footer ends -->
+    </section>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/route.js"></script>
+    <script type="text/javascript" src="app/controllers/loginController.js"></script>
+    <script type="text/javascript" src="app/controllers/employeeListController.js"></script>
+    <script type="text/javascript" src="app/controllers/logoutController.js"></script>
+    <script type="text/javascript" src="app/controllers/resourceRequestController.js"></script>
+    <script type="text/javascript" src="app/controllers/faqController.js"></script>
+    <script type="text/javascript" src="app/controllers/employeeTableController.js"></script>
+    <script type="text/javascript" src="app/controllers/resourceTableController.js"></script>
+    <!-- [if lt IE 9] -->
+   <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+   </script>
+    <!-- [endif] -->
+
+</body>
+
+</html>

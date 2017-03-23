@@ -1,0 +1,17 @@
+<section class="faq">
+	<section class="heading">
+		<p>Frequently Asked Questions</p>
+	</section>
+	<section class="questionPage">
+			<!-- FAQ accordion using ng-repeat starts -->
+			<section class="question" ng-repeat='x in faq'>
+			<div class="q" ng-click="accordian($index,$event)" title='{{x.number}}'>
+					<img src='{{x.image}}'>
+					<span>{{x.question}}</span>
+				</div >
+				<div class="answer" id='{{$index}}'>
+					<p>{{x.answer}}</p>
+				</div>
+			</section>
+			<!-- FAQ accordion using ng-repeat ends -->
+</section> 

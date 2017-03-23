@@ -1,0 +1,147 @@
+<section class="resourceRequest" ng-controller="resourceTableController">
+    <!--resourceRequest starts  -->
+    <section class="addUpdate">
+        <!-- addUpdate starts -->
+        <p>Request For Resource</p>
+    </section>
+    <!-- addUpdate ends -->
+    <section class="requestListProfile">
+        <!-- requestListProfile starts -->
+
+        <form name="resourceForm" novalidate>
+            <p class="profileHead">Profile:
+                <p>
+                    <section class="formContent">
+                        <!--  formContent starts-->
+                        <div>
+                            <label>Designation:</label>
+                            <select ng-model="roleName" ng-required="true">
+    <option value-""></option>                    
+    <option value="Programmer Analyst">Programmer Analyst</option>
+    <option value="Associate">Associate</option>
+    <option value="HR-Manager">HR-Manager</option>
+    <option value="HR-Staff">HR-Staff</option>
+    <option value="Manager">Manager</option>
+</select>
+                        </div>
+                        <div>
+                            <label>Experiencs in Years:</label>
+                            <input class="makeChange" type="text" ng-pattern="/^[0-9]{1,2}$/" name="expYears" ng-model="roleExp" ng-reqiured="true">
+                            <span class="error" ng-show="resourceForm.expYears.$error.pattern">Enter valid experience year in number</span>
+                        </div>
+                        <div>
+                            <label>Numbers:</label>
+                            <input ng-model="roleNum" ng-pattern="/^[0-9]{1,2}$/" ng-required="true" class="makeChange" type="text" name="numbers">
+                            <span class="error" ng-show="resourceForm.numbers.$error.pattern">Enter valid number</span>
+                        </div>
+                        <div class="requestList ">
+                            <label>Skills:</label>
+                            <div class="containSkills">
+                                <div class="checkChange" ng-repeat="role in roles">
+
+                                    <input type="checkbox" name="selectedRoles[]" value="{{role}}" ng-checked="selection.indexOf(role) > -1" ng-click="toggleSelection(role)"> {{role}}
+
+
+                                </div>
+                                <div class="clearFix"></div>
+                            </div>
+                            <div class="clearFix"></div>
+                        </div>
+
+
+
+                        <div class="requestList">
+                            <label>Competency:</label>
+                            <select ng-model="roleComp">
+<option>CI Web</option>
+<option>CI Server</option>
+</select>
+                        </div>
+                        <div class="requestList">
+                            <label>Position:</label>
+                            <input ng-required="true" type="radio" name="click" checked ng-model="rolePos" value="Onsite">On site
+                            <input ng-required="true" type="radio" name="click" ng-model="rolePos" value="Offshore">Off shore
+                        </div>
+                        <div>
+                            <label>Location:</label>
+                            <select ng-model="roleLoc" ng-required="true">
+<option>Chennai</option>
+<option>Bangalore</option>
+<option>Kolkata</option>
+</select>
+                        </div>
+                        <!-- save button -->
+                        <div class="saveBtn_2">
+                            <button ng-click="addRole()" ng-show="save" ng-disabled="resourceForm.$invalid">Save</button>
+                        </div>
+                        <!-- update button -->
+                        <div class="saveBtn_2">
+                            <button ng-click="updateRole();upRole($index)" ng-show="update">Update</button>
+                        </div>
+                    </section>
+                    <!--  formContent ends-->
+
+        </form>
+    </section>
+      <!-- requestListProfile ends -->
+    <section class="profileTable">
+        <p>Request List</p>
+        <table class="tableBody">
+            <thead>
+                <tr>
+                    <th>
+                        Request Id
+                    </th>
+                    <th>
+                        Designation
+                    </th>
+                    <th>
+                        Position
+                    </th>
+                    <th>
+                        No.
+                    </th>
+                    <th>
+                        Competancy
+                    </th>
+                    <th>
+                        Location
+                    </th>
+                    <th>
+                        Edit
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in requestDetails | orderBy : 'RequestID' track by $index ">
+                    <td>
+                        {{data.RequestID}}
+
+                    </td>
+                    <td>
+                        {{data.Designation}}
+                    </td>
+                    <td>
+                        {{data.Position}}
+                    </td>
+                    <td>
+                        {{data.No}}
+                    </td>
+                    <td>
+                        {{data.Competency}}
+                    </td>
+                    <td>
+                        {{data.Location}}
+                    </td>
+                    <td>
+                        <img src="assets/images/edit.png" / ng-click="editRole(data);getRole($index)">
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </section>
+    <!-- requestListProfile ends -->
+</section>
+<!--resourceRequest ends  -->
